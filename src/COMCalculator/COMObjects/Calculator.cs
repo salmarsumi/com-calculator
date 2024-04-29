@@ -1,13 +1,15 @@
-﻿using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.Marshalling;
+﻿using COMCalculator.Logging;
+using Serilog;
+using System.Runtime.InteropServices;
 
 namespace COMCalculator.COMObjects;
 
 /// <summary>
 /// COM calculator interface.
 /// </summary>
-[GeneratedComInterface]
 [Guid("34bc4842-8c2b-49c0-816c-859f7a6ded5b")]
+[ComVisible(true)]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 public partial interface ICalculator
 {
     /// <summary>
@@ -30,16 +32,43 @@ public partial interface ICalculator
 /// <summary>
 /// COM calculator implementation.
 /// </summary>
-[GeneratedComClass]
-internal partial class Caclulator : ICalculator
+[Guid("20372aac-e4bb-42fa-82b0-fea0732375be")]
+[ComVisible (true)]
+[ClassInterface(ClassInterfaceType.None)]
+public partial class Calculator : ICalculator
 {
-    public int Add(int x, int y)
+    private ILogger _logger;
+
+    /// <summary>
+    /// Create a new instance of the Calculator object.
+    /// </summary>
+    public Calculator()
     {
-        return x + y;
+        _logger = LoggerFactory.CreateLogger();
     }
 
+    /// <summary>
+    /// Create a new instance of the Calculator object.
+    /// </summary>
+    /// <param name="logger">Serilog ILogger instance.</param>
+    public Calculator(ILogger logger)
+    {
+        _logger = logger;
+    }
+
+    /// <inheritdoc cref="ICalculator.Add(int, int)"/>
+    public int Add(int x, int y)
+    {
+        _logger.Debug("Add method invoked");
+        int result = x + y;
+        return result;
+    }
+
+    /// <inheritdoc cref="ICalculator.Subtract(int, int)"/>
     public int Subtract(int x, int y)
     {
-        return x - y;
+        _logger.Debug("Subtract method invoked");
+        int result = x - y;
+        return result;
     }
 }

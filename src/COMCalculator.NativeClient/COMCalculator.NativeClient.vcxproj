@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="COMCalculator.NativeClient.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="COMCalculator.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
