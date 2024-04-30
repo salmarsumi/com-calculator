@@ -10,7 +10,7 @@ namespace COMCalculator.COMObjects;
 [Guid("34bc4842-8c2b-49c0-816c-859f7a6ded5b")]
 [ComVisible(true)]
 [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-public partial interface ICalculator
+public interface ICalculator
 {
     /// <summary>
     /// Calculate the sum of two integer numbers.
@@ -35,7 +35,7 @@ public partial interface ICalculator
 [Guid("20372aac-e4bb-42fa-82b0-fea0732375be")]
 [ComVisible (true)]
 [ClassInterface(ClassInterfaceType.None)]
-public partial class Calculator : ICalculator
+public class Calculator : ICalculator
 {
     private ILogger _logger;
 
