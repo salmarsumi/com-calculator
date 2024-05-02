@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="COMCalculator.NativeClient.cpp" />
+    <ClCompile Include="EventSink.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="COMCalculator.h" />
+    <ClInclude Include="EventSink.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -18,9 +18,15 @@
     <ClCompile Include="COMCalculator.NativeClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EventSink.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="COMCalculator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventSink.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
