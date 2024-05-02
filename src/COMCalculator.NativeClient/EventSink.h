@@ -4,7 +4,8 @@
 #include <comutil.h>
 #include "COMCalculator.h"
 
-class EventSink : public IDispatch {
+class EventSink : public IDispatch
+{
 public:
 	// Constructors and destructors
 	EventSink() : m_refCount(0) { }
